@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nobo AI - Your AI Front-End Developer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS Styles -->
+    <style>
+        /* Reset Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Root Variables */
+        :root {
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+            --accent-color: #00d1ff;
+            --button-background: #00d1ff;
+            --button-hover: #00aaff;
+            --font-family: 'Inter', sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: background var(--transition-speed) ease;
+        }
+
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--accent-color);
+            cursor: pointer;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-logo:hover {
+            color: var(--button-hover);
+        }
+
+        .nav-links button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--button-background);
+            color: var(--background-color);
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-speed), transform 0.2s ease;
+        }
+
+        .nav-links button:hover {
+            background-color: var(--button-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Demo Video Section */
+        .demo-video {
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+
+        .demo-video h2 {
+            font-size: 2.5em;
+            font-weight: 500;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+            transition: color var(--transition-speed);
+        }
+
+        .demo-video h2:hover {
+            color: var(--button-hover);
+        }
+
+        .demo-video iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 506px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .demo-video iframe:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #000000;
+            color: #777777;
+            font-size: 0.9em;
+            transition: background-color var(--transition-speed);
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        footer a:hover {
+            color: var(--button-hover);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .demo-video iframe {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .demo-video iframe {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .demo-video iframe {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Nobo AI</div>
+            <div class="nav-links">
+                <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfDEjfkW6hObvBmM31LJR1mW6CvXAI9k_sZZSOfukPDWPczuw/viewform?usp=sf_link', '_blank')">Join the Waitlist</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Video Section -->
+    <section class="demo-video">
+        <h2>Watch Our Demo</h2>
+        <iframe src="https://www.youtube.com/watch?v=QJkTnYmza5k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Nobo AI. All rights reserved.
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navigation Bar Background Change on Scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
